@@ -3,10 +3,23 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	margin: 1em;
+	padding: 0.5em 1em;
+	box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
 }
 
-.navbar > a {
-	font-size: 1.25em;
+.navbar a {
 	padding: 4px;
+}
+
+.logo {
+	font-size: 1.25em;
+}
+
+.logo > span {
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.links > a {
+	margin-left: 0.5em;
 }
