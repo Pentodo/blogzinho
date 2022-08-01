@@ -1,0 +1,12 @@
+.navbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1em;
+}
+
+.navbar > a {
+	font-size: 1.25em;
+	padding: 4px;
+}
