@@ -1,12 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 body {
 	margin: 0;
 	text-align: center;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Jost', sans-serif;
 }
 
 a {
 	color: black;
 	text-decoration: none;
+}
+
+.container {
+	min-height: 60vh;
 }
 
 .active {

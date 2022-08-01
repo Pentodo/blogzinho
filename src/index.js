@@ -7,16 +7,20 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Other from './routes/other';
+import Footer from './components/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
 		<BrowserRouter>
 			<Navbar />
-			<Routes>
-				<Route path='/' element={<App />} />
-				<Route path='/other' element={<Other />} />
-			</Routes>
+			<div className='container'>
+				<Routes>
+					<Route path='/' element={<App />} />
+					<Route path='/other' element={<Other />} />
+				</Routes>
+			</div>
+			<Footer />
 		</BrowserRouter>
 	</React.StrictMode>
 );
