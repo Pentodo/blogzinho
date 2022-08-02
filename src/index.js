@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Other from './routes/other';
+import Login from './routes/login';
 import Footer from './components/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -17,7 +17,7 @@ root.render(
 			<div className='container'>
 				<Routes>
 					<Route path='/' element={<App />} />
-					<Route path='/other' element={<Other />} />
+					<Route path='/login' element={<Login />} />
 				</Routes>
 			</div>
 			<Footer />

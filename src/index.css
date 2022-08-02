@@ -2,7 +2,6 @@
 
 body {
 	margin: 0;
-	text-align: center;
 	font-family: 'Jost', sans-serif;
 }
 
@@ -14,7 +13,11 @@ a {
 }
 
 .container {
-	min-height: 60vh;
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+	margin: 2em;
 }
 
 .active {
