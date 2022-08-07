@@ -27,9 +27,7 @@ root.render(
 							path='/login'
 							element={
 								<AuthContext.Consumer>
-									{({ user }) => {
-										return user ? <Navigate to='/' /> : <Login />;
-									}}
+									{({ user }) => (user ? <Navigate to='/' /> : <Login />)}
 								</AuthContext.Consumer>
 							}
 						/>
