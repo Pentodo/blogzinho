@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
+import App from './App';
+import NotFound from './routes/NotFound';
+import Login from './routes/Login';
+
 import Auth from './components/Auth';
 import Navbar from './components/Navbar';
-import Login from './routes/Login';
 import Footer from './components/Footer';
 
 import { AuthContext } from './context/AuthContext';
-import NotFound from './routes/NotFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
