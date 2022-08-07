@@ -3,6 +3,7 @@
 body {
 	margin: 0;
 	font-family: 'Jost', sans-serif;
+	text-align: center;
 }
 
 a {
@@ -10,6 +11,42 @@ a {
 	text-decoration: none;
 	user-select: none;
 	-webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2 {
+	margin: 0;
+}
+
+p {
+	margin: 0.5em;
+}
+
+form {
+	width: 100%;
+	max-width: 320px;
+	margin-top: 1.5em;
+}
+
+form,
+label {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+label {
+	align-items: flex-start;
+}
+
+input {
+	width: 100%;
+	align-self: center;
+}
+
+input[type='button'] {
+	width: fit-content;
+	margin-top: 1.5em;
 }
 
 .container {
