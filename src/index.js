@@ -4,12 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Auth from './components/Auth';
 import Navbar from './components/Navbar';
 import Login from './routes/Login';
 import Footer from './components/Footer';
+
+import NotFound from './routes/NotFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,7 +22,7 @@ root.render(
 				<div className='container'>
 					<Routes>
 						<Route path='/' element={<App />} />
-						<Route path='/login' element={<Login />} />
+						<Route path='*' element={<NotFound />} />
 					</Routes>
 				</div>
 				<Footer />
