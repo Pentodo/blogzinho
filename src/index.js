@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Auth from './components/Auth';
 import Navbar from './components/Navbar';
 import Login from './routes/Login';
 import Footer from './components/Footer';
@@ -12,16 +14,18 @@ import Footer from './components/Footer';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<BrowserRouter>
-			<Navbar />
-			<div className='container'>
-				<Routes>
-					<Route path='/' element={<App />} />
-					<Route path='/login' element={<Login />} />
-				</Routes>
-			</div>
-			<Footer />
-		</BrowserRouter>
+		<Auth>
+			<BrowserRouter>
+				<Navbar />
+				<div className='container'>
+					<Routes>
+						<Route path='/' element={<App />} />
+						<Route path='/login' element={<Login />} />
+					</Routes>
+				</div>
+				<Footer />
+			</BrowserRouter>
+		</Auth>
 	</React.StrictMode>
 );
 

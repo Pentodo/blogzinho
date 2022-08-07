@@ -7,9 +7,9 @@ import {
 	updateProfile,
 } from 'firebase/auth';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-export default function useAuth() {
+export const useAuth = () => {
 	const [loading, setLoading] = useState(false);
 
 	const auth = getAuth();
@@ -30,7 +30,8 @@ export default function useAuth() {
 	};
 
 	return {
+		auth,
 		loading,
 		createUser,
 	};
-}
+};

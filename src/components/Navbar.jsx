@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
+	const { user } = useContext(AuthContext);
+
 	return (
 		<nav className={styles.navbar}>
 			<Link to='/' className={styles.logo}>
@@ -9,7 +13,7 @@ const Navbar = () => {
 			</Link>
 			<div className={styles.links}>
 				<NavLink to='/'>Home</NavLink>
-				<NavLink to='/login'>Login</NavLink>
+				{!user && <NavLink to='/login'>Login</NavLink>}
 			</div>
 		</nav>
 	);
