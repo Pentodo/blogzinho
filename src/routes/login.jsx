@@ -3,20 +3,22 @@ import { useAuth } from '../hooks/useAuth';
 import styles from './Login.module.css';
 
 const Login = () => {
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+	const { loading, register, login } = useAuth();
 
-	const { loading, createUser } = useAuth();
+	const [registerEmail, setRegisterEmail] = useState('');
+	const [registerPassword, setRegisterPassword] = useState('');
 
 	const handleRegister = (e) => {
 		e.preventDefault();
+		register({ email: registerEmail, password: registerPassword });
+	};
 
-		if (loading) {
-			return;
-		}
+	const [loginEmail, setLoginEmail] = useState('');
+	const [loginPassword, setLoginPassword] = useState('');
 
-		const data = { email, password };
-		createUser(data).then((res) => console.log(res));
+	const handleLogin = (e) => {
+		e.preventDefault();
+		login({ email: loginEmail, password: loginPassword });
 	};
 
 	return (
@@ -31,7 +33,7 @@ const Login = () => {
 						<input
 							type='email'
 							id='register-email'
-							onChange={(e) => setEmail(e.target.value)}
+							onChange={(e) => setRegisterEmail(e.target.value)}
 							required
 						/>
 					</label>
@@ -40,20 +42,20 @@ const Login = () => {
 						<input
 							type='password'
 							id='register-password'
-							onChange={(e) => setPassword(e.target.value)}
+							onChange={(e) => setRegisterPassword(e.target.value)}
 							required
 						/>
 					</label>
 					<input type='submit' value='>>' disabled={loading} />
 				</form>
-				<form>
+				<form onSubmit={handleLogin}>
 					<h2>Entrar</h2>
 					<label>
 						E-mail:{' '}
 						<input
 							type='email'
 							id='login-email'
-							onChange={(e) => setEmail(e.target.value)}
+							onChange={(e) => setLoginEmail(e.target.value)}
 							required
 						/>
 					</label>
@@ -62,7 +64,7 @@ const Login = () => {
 						<input
 							type='password'
 							id='login-password'
-							onChange={(e) => setPassword(e.target.value)}
+							onChange={(e) => setLoginPassword(e.target.value)}
 							required
 						/>
 					</label>

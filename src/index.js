@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import Login from './routes/Login';
 import Footer from './components/Footer';
 
+import { AuthContext } from './context/AuthContext';
 import NotFound from './routes/NotFound';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,6 +23,16 @@ root.render(
 				<div className='container'>
 					<Routes>
 						<Route path='/' element={<App />} />
+						<Route
+							path='/login'
+							element={
+								<AuthContext.Consumer>
+									{({ user }) => {
+										return user ? <Navigate to='/' /> : <Login />;
+									}}
+								</AuthContext.Consumer>
+							}
+						/>
 						<Route path='*' element={<NotFound />} />
 					</Routes>
 				</div>

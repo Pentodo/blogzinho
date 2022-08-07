@@ -1,37 +1,34 @@
 import db from '../firebase/config';
-import {
-	getAuth,
-	createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
-	signOut,
-	updateProfile,
-} from 'firebase/auth';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
 import { useState } from 'react';
 
 export const useAuth = () => {
 	const [loading, setLoading] = useState(false);
 
-	const auth = getAuth();
+	const auth = getAuth(db.app);
 
-	const createUser = async (data) => {
+	const register = async (data) => {
 		setLoading(true);
-
-		let user;
-		try {
-			const UserCredential = createUserWithEmailAndPassword(auth, data.email, data.password);
-			user = (await UserCredential).user;
-		} catch (error) {
-			console.log(error);
-		}
-
-		setLoading(false);
-		return user;
+		createUserWithEmailAndPassword(auth, data.email, data.password)
+			.catch((error) => console.log(error))
+			.finally(() => setLoading(false));
 	};
+
+	const login = async (data) => {
+		setLoading(true);
+		signInWithEmailAndPassword(auth, data.email, data.password)
+			.catch((error) => console.log(error))
+			.finally(() => setLoading(false));
+	};
+
+	const logout = () => signOut(auth).catch((error) => console.log(error));
 
 	return {
 		auth,
 		loading,
-		createUser,
+		register,
+		login,
+		logout,
 	};
 };
