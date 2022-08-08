@@ -24,7 +24,7 @@ const Login = () => {
 	return (
 		<div className={styles.Login}>
 			<h1>Login</h1>
-			<p>Crie ou logue em sua conta abaixo:</p>
+			<p>Crie ou logue em sua conta:</p>
 			<div className={styles.forms}>
 				<form onSubmit={handleRegister}>
 					<h2>Registrar</h2>
