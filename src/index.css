@@ -2,8 +2,8 @@
 
 body {
 	margin: 0;
-	font-family: 'Jost', sans-serif;
 	text-align: center;
+	font-family: 'Jost', sans-serif;
 }
 
 a {
@@ -25,7 +25,6 @@ p {
 form {
 	width: 100%;
 	max-width: 320px;
-	margin-top: 1.5em;
 }
 
 form,
@@ -42,11 +41,31 @@ label {
 input {
 	width: 100%;
 	align-self: center;
+	padding: 0.3em 0.3em 0.1em 0.3em;
+	font-size: 1em;
+	outline: 0px;
+	border: 0px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+	margin-bottom: 0.6em;
+}
+
+input:focus {
+	background-color: rgba(0, 0, 0, 0.1);
 }
 
 input[type='submit'] {
 	width: fit-content;
-	margin-top: 1.5em;
+	border: 1px solid black;
+	border-radius: 2px;
+	background-color: white;
+	padding: 0.2em 0.5em;
+	margin-top: 1em;
+}
+
+input[type='submit']:hover {
+	cursor: pointer;
+	background-color: black;
+	color: white;
 }
 
 .container {
