@@ -14,6 +14,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 import { AuthContext } from './context/AuthContext';
+import CreatePost from './routes/CreatePost';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -32,6 +33,7 @@ root.render(
 								</AuthContext.Consumer>
 							}
 						/>
+						<Route path='posts/create' element={<CreatePost />} />
 						<Route path='*' element={<NotFound />} />
 					</Routes>
 				</div>

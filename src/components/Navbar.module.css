@@ -13,11 +13,11 @@
 }
 
 .logo {
-	font-size: 1.25em;
+	font-size: 1.375em;
 }
 
 .logo > span {
-	font-weight: 900;
+	font-weight: 700;
 	text-transform: uppercase;
 }
 

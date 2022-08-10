@@ -23,7 +23,7 @@ const Auth = ({ children }) => {
 
 	return user === undefined ? (
 		<div className={styles.loading}>
-			<img src='loading.gif' alt='loading'></img>
+			<img src='/loading.gif' alt='loading'></img>
 		</div>
 	) : (
 		<AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>

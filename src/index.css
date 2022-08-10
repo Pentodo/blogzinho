@@ -1,9 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body,
+input,
+textarea {
+	font-family: 'Quicksand', sans-serif;
+}
 
 body {
 	margin: 0;
 	text-align: center;
-	font-family: 'Jost', sans-serif;
+	font-weight: 500;
 }
 
 a {
@@ -22,11 +28,6 @@ p {
 	margin: 0.5em;
 }
 
-form {
-	width: 100%;
-	max-width: 320px;
-}
-
 form,
 label {
 	display: flex;
@@ -34,19 +35,27 @@ label {
 	justify-content: center;
 }
 
-label {
-	align-items: flex-start;
+form {
+	width: 100%;
+	max-width: 320px;
+	margin-top: 1em;
+	gap: 1em;
 }
 
-input {
+label {
+	align-items: flex-start;
+	margin: 0.5em 0;
+}
+
+input,
+textarea {
 	width: 100%;
 	align-self: center;
-	padding: 0.3em 0.3em 0.1em 0.3em;
+	padding: 0.375em 0.375em 0.125em 0.375em;
 	font-size: 1em;
 	outline: 0px;
 	border: 0px;
 	border-bottom: 2px solid rgba(0, 0, 0, 0.8);
-	margin-bottom: 0.6em;
 }
 
 input:focus {
@@ -58,14 +67,20 @@ input[type='submit'] {
 	border: 1px solid black;
 	border-radius: 2px;
 	background-color: white;
-	padding: 0.2em 0.5em;
-	margin-top: 1em;
+	padding: 0.375em 0.75em;
+	font-weight: 500;
 }
 
 input[type='submit']:hover {
 	cursor: pointer;
 	background-color: black;
 	color: white;
+}
+
+input[type='submit']:disabled {
+	background-color: white;
+	color: grey;
+	cursor: default;
 }
 
 .container {

@@ -28,46 +28,50 @@ const Login = () => {
 			<div className={styles.forms}>
 				<form onSubmit={handleRegister}>
 					<h2>Registrar</h2>
-					<label>
-						E-mail:{' '}
-						<input
-							type='email'
-							id='register-email'
-							onChange={(e) => setRegisterEmail(e.target.value)}
-							required
-						/>
-					</label>
-					<label>
-						Senha:{' '}
-						<input
-							type='password'
-							id='register-password'
-							onChange={(e) => setRegisterPassword(e.target.value)}
-							required
-						/>
-					</label>
+					<div>
+						<label>
+							E-mail:{' '}
+							<input
+								type='email'
+								id='register-email'
+								onChange={(e) => setRegisterEmail(e.target.value)}
+								required
+							/>
+						</label>
+						<label>
+							Senha:{' '}
+							<input
+								type='password'
+								id='register-password'
+								onChange={(e) => setRegisterPassword(e.target.value)}
+								required
+							/>
+						</label>
+					</div>
 					<input type='submit' value='>>' disabled={loading} />
 				</form>
 				<form onSubmit={handleLogin}>
 					<h2>Entrar</h2>
-					<label>
-						E-mail:{' '}
-						<input
-							type='email'
-							id='login-email'
-							onChange={(e) => setLoginEmail(e.target.value)}
-							required
-						/>
-					</label>
-					<label>
-						Senha:{' '}
-						<input
-							type='password'
-							id='login-password'
-							onChange={(e) => setLoginPassword(e.target.value)}
-							required
-						/>
-					</label>
+					<div>
+						<label>
+							E-mail:{' '}
+							<input
+								type='email'
+								id='login-email'
+								onChange={(e) => setLoginEmail(e.target.value)}
+								required
+							/>
+						</label>
+						<label>
+							Senha:{' '}
+							<input
+								type='password'
+								id='login-password'
+								onChange={(e) => setLoginPassword(e.target.value)}
+								required
+							/>
+						</label>
+					</div>
 					<input type='submit' value='>>' disabled={loading} />
 				</form>
 			</div>

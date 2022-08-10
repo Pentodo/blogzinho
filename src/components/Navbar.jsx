@@ -16,9 +16,12 @@ const Navbar = () => {
 			<div className={styles.links}>
 				<NavLink to='/'>Home</NavLink>
 				{user ? (
-					<Link to='/' onClick={logout}>
-						Logout
-					</Link>
+					<>
+						<NavLink to='/posts/create'>Postar</NavLink>
+						<Link to='/' onClick={logout}>
+							Logout
+						</Link>
+					</>
 				) : (
 					<NavLink to='/login'>Login</NavLink>
 				)}
