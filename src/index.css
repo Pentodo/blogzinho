@@ -58,6 +58,12 @@ textarea {
 	border-bottom: 2px solid rgba(0, 0, 0, 0.8);
 }
 
+textarea {
+	min-width: 100%;
+	max-width: 100%;
+	min-height: 4em;
+}
+
 input:focus {
 	background-color: rgba(0, 0, 0, 0.1);
 }

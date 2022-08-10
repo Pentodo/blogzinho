@@ -8,14 +8,14 @@ export const useAuth = () => {
 
 	const auth = getAuth(db.app);
 
-	const register = async (data) => {
+	const register = (data) => {
 		setLoading(true);
 		createUserWithEmailAndPassword(auth, data.email, data.password)
 			.catch((error) => console.log(error))
 			.finally(() => setLoading(false));
 	};
 
-	const login = async (data) => {
+	const login = (data) => {
 		setLoading(true);
 		signInWithEmailAndPassword(auth, data.email, data.password)
 			.catch((error) => console.log(error))

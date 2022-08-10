@@ -1,0 +1,29 @@
+.Post {
+	max-width: 500px;
+	background-color: black;
+	color: white;
+	border-radius: 8px;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	gap: 2em;
+}
+
+.Post > * {
+	margin: 0;
+}
+
+.Post > img {
+	width: 100%;
+	border-radius: 4px;
+	align-self: center;
+}
+
+.Post > p {
+	text-align: justify;
+}
+
+.by {
+	align-self: flex-end;
+	font-size: 0.9em;
+}
