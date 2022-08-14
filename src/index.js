@@ -33,7 +33,14 @@ root.render(
 								</AuthContext.Consumer>
 							}
 						/>
-						<Route path='posts/create' element={<CreatePost />} />
+						<Route
+							path='posts/create'
+							element={
+								<AuthContext.Consumer>
+									{({ user }) => (user ? <CreatePost /> : <Navigate to='/login' />)}
+								</AuthContext.Consumer>
+							}
+						/>
 						<Route path='*' element={<NotFound />} />
 					</Routes>
 				</div>
